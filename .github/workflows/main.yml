@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-python@v5
       - name: 'install all depedencies'
         run: pip install --quiet --upgrade --requirement requirements.txt
-      - name: 'Lintage du code'
-        run: |
-          flake8 --ignore=E501,E231 *.py
-	  pylint --errors-only --disable=C0301 --disable=C0326 *.py
+      - name: 'Lintage du code 1'
+        run: flake8 --ignore=E501,E231 *.py
+      - name: 'Lintage du code 2'
+        run: pylint --errors-only --disable=C0301 --disable=C0326 *.py
