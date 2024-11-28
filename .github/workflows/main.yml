@@ -13,5 +13,5 @@ jobs:
         run: pip install --quiet --upgrade --requirement requirements.txt
       - name: 'Lintage du code'
         run: |
-          flake8 --ignore=E501,E231 *.py
-	        pylint --errors-only --disable=C0301 --disable=C0326 *.py
+         flake8 --ignore=E501,E231 *.py
+	 pylint --errors-only --disable=C0301 --disable=C0326 *.py
