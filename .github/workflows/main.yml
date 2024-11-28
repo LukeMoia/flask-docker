@@ -42,7 +42,10 @@ jobs:
         id: metadata  # ID pour cette étape
         uses: docker/metadata-action@v5  # Utilise l'action de métadonnées
         with:
-          images: ghcr.io/${{ github.repository }}/  # Utilise le nom dur repository
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           
       - name: Get current date # get the date of the build
         id: date
